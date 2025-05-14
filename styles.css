@@ -59,10 +59,6 @@ p {
         font-size: 1rem;
 }
 
-#active {
-    border: 1px solid var(--primary-color2);
-    padding: 5px;
-}
 
 .flexcontain {
     display: flex; 
@@ -120,7 +116,14 @@ p {
   gap: 15px;
 }
 
+.navlinks a.active {
+  font-weight: bold;
+    border-bottom: 2px solid var(--primary-color2);
+}
 
+.mobile-register-btn{
+  display: none;
+}
 
 /* Hamburger button hidden on desktop */
 .hamburger {
@@ -143,26 +146,25 @@ p {
     display: none;
   }
 
-  /* Hide register button on mobile */
   .button {
     display: none;
   }
 
+
   /* Style for mobile menu */
   #mobileMenu {
     position: absolute;
-    top: 60px; /* adjust as needed */
+    top: 60px;
     right: 10px;
     width: 180px;
     flex-direction: column;
     padding: 10px;
-    display: none; /* hidden by default */
+    display: none; 
     background-color: #0B4169;
     border-radius: 4px;
-    z-index: 999; /* ensure it's above other elements */
+    z-index: 999;
   }
 
-  /* Show menu when toggled */
   #mobileMenu.show {
     display: flex;
   }
@@ -239,6 +241,7 @@ p {
         font-size: 1.2em;
 }
 
+
 .footer{
         margin-top: 15%; 
         border-top: 2px solid var(--primary-color2);
@@ -266,6 +269,7 @@ p {
   justify-content: space-between;
   align-items: stretch; /* Ensures items stretch to same height */
   gap: 20px;
+  flex-basis: auto;
 }
 
 /* Each speaker card */
@@ -317,7 +321,7 @@ p {
 /* Optional: style headings and paragraphs for consistency */
 .speakers-name {
   margin: 0;
-  font-size: 1.2em;
+  font-size: 20px;
 }
 
 .speakers-title {
@@ -329,12 +333,20 @@ p {
 /* MOBILE VIEW DESIGN HERE... */
 @media (max-width: 768px) {
 
+  .mobile-register-btn{
+  display: block;
+}
+
+  .flex-container {
+    justify-content: center;
+  }
+
     .speakers-title {
-        font-size: 14px;
+        font-size: 17px;
     }
 
     .speakers-name{
-        font-size: 15px;
+        font-size: 17px;
     }
 
     .speakers-flex {
@@ -366,18 +378,18 @@ p {
     }
 
     .change-shape {
-        width: 400px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
     }
 
     .timer {
-        width: 90%;
+        width: 85%;
         margin-left: 0px;
         padding-left: 25px;
     }
 
     #days, #hours, #minutes, #seconds {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .desktop-hero {
@@ -397,11 +409,21 @@ p {
     }
     
     .banner {
-        width: 400px;
+        width: 300px;
         height: 200px
     }
 
     .address {
         display: block;
     }
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body{
+  margin: 2%;
 }

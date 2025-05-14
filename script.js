@@ -78,3 +78,21 @@ faders.forEach(fader => {
       mobileMenu.classList.toggle('show');
     });
   });
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.navlinks a');
+
+    // Get current path, e.g., /index.html
+    const currentPath = window.location.pathname;
+
+    // Loop through links to find the one matching current URL
+    links.forEach(link => {
+      const linkPath = new URL(link.href).pathname;
+
+      // Check if link's pathname matches current path
+      if (linkPath === currentPath) {
+        link.classList.add('active');
+      }
+    });
+  });

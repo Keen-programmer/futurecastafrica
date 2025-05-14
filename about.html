@@ -50,6 +50,20 @@
           <a href="index.html" id="active">Home</a>
           <a href="about.html">About</a>
           <a href="speakers.html">Speakers</a>
+          <a href='https://lu.ma/l8suhfxp'
+          class="mobile-register-btn"
+          style="
+          background-color: var(--primary-color2);
+        padding: 15px;
+        border: none;
+        color: white;
+        font-weight: bold;
+        width: 75%;
+        cursor: pointer;
+        font-size: 15px;
+        text-align: center;
+        "
+          >Register</a>
         </nav>
         <button class="button">Register Now</button>
     </div>
@@ -71,10 +85,10 @@
 
         <section style="text-align: center; margin-top: 13%;">
             <div style="line-height: 0px;">
-                <h1 class="fade-in" style="font-size: 40px;">IDCL CONFERENCE'24</h1>
+                <h1 class="fade-in" style="font-size: 25px;">IDCL CONFERENCE'24</h1>
                 <p class="fade-in">Here is how our conference 2024 went</p>
             </div>
-             <img class="fade-in" src="shapes/banner.jpg" width="430px" height="350px" />
+             <img class="fade-in responsive-img" src="shapes/banner.jpg" />
         </section>
 
         <section style="margin-top: 13%;">
@@ -219,6 +233,23 @@ faders.forEach(fader => {
       
       // Toggle 'show' class to display/hide menu
       mobileMenu.classList.toggle('show');
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.navlinks a');
+
+    // Get current path, e.g., /index.html
+    const currentPath = window.location.pathname;
+
+    // Loop through links to find the one matching current URL
+    links.forEach(link => {
+      const linkPath = new URL(link.href).pathname;
+
+      // Check if link's pathname matches current path
+      if (linkPath === currentPath) {
+        link.classList.add('active');
+      }
     });
   });
 </script>
